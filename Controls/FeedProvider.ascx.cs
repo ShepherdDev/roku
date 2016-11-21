@@ -117,6 +117,11 @@ namespace RockWeb.Plugins.com_shepherdchurch.Roku
             }
             else
             {
+                Response.Clear();
+                Response.ContentType = "text/xml";
+                Response.ContentEncoding = System.Text.Encoding.UTF8;
+                Response.Write( template.ResolveMergeFields( mergeFields ) );
+                Response.End();
             }
         }
 
